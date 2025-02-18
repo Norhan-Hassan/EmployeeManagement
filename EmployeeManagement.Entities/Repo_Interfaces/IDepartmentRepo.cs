@@ -8,9 +8,8 @@ using System.Threading.Tasks;
 
 namespace EmployeeManagement.Entities.Repo_Interfaces
 {
-    public interface IDepartmentRepo:IGenericRepo<Department>
+    public interface IDepartmentRepo : IGenericRepo<Department>
     {
         void Update(Department department);
-        //EmployeeDepartmentsViewModel PrepareEmpDeptViewModel(ApplicationUser? user = null);
     }
 }

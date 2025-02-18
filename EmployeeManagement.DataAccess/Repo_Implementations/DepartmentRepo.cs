@@ -27,29 +27,6 @@ namespace EmployeeManagement.DataAccess.Repo_Implementations
             }
            
         }
-        //public EmployeeDepartmentsViewModel PrepareEmpDeptViewModel(ApplicationUser? user = null)
-        //{
-        //    var departments = _context.Departments.ToList();
-        //    if (user == null)
-        //    {
-        //        EmployeeDepartmentsViewModel viewModel = new EmployeeDepartmentsViewModel()
-        //        {
-        //            applicationUser = new ApplicationUser(),
-        //            departments = departments,
-        //        };
-        //        return viewModel;
-        //    }
-        //    else if (user != null)
-        //    {
-        //        var departmentsInDb = _context.Departments.FirstOrDefault(d=> d.ID == user.DepartmentID);
-        //        EmployeeDepartmentsViewModel viewModel = new EmployeeDepartmentsViewModel()
-        //        {
-        //            applicationUser=user,
-        //            departments=departments
-        //        };
-        //        return viewModel;
-        //    }
-        //    return null;
-        //}
+        
     }
 }
