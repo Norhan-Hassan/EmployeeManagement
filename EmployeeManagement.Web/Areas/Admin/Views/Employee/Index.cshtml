@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ApplicationUser>
+
+<div class="container mt-4">
+
+    <div class="card shadow-lg">
+        <div class="card-header">
+            <h4 class="mb-0">Employees</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-striped table-hover table-bordered mb-0">
+                <thead class="bg-secondary text-white">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Department Name</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Any())
+                    {
+                        @foreach (var user in Model)
+                        {
+                            <tr>
+                                <td>@user.UserName</td>
+                                <td>@user.Email</td>
+                                <td>@(user.department != null ? user.department.Name : "No Department")</td>
+                                <td class="text-center">
+                                    <a class="btn btn-sm btn-success text-white" asp-action="Edit" asp-controller="Employee" asp-route-id="@user.Id">
+                                        Edit
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center text-muted">
+                                No employees found.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

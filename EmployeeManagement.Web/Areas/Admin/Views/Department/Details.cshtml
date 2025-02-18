@@ -1,0 +1,33 @@
+﻿@model DepartmentEmployeesViewModel
+
+<h3 class="border-bottom pb-2">Employees in Department:</h3>
+
+<h4 class="text-dark mb-3">@Model.department.Name</h4>
+
+<table class="table table-striped table-hover">
+    <thead class="bg-secondary text-white">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.applicationUsers != null && Model.applicationUsers.Any())
+        {
+            foreach (var employee in Model.applicationUsers)
+            {
+                <tr>
+                    <td>@employee.UserName</td>
+                    <td>@employee.Email</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="2" class="text-center">No employees found in this department.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-secondary" asp-action="Index" asp-controller="Department">Back To List</a>
