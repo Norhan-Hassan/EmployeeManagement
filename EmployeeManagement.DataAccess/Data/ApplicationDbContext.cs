@@ -20,12 +20,13 @@ namespace EmployeeManagement.DataAccess.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+            //this for specifying the relationship between appuser and department
+            //and apply Delete Cascade
             modelBuilder.Entity<ApplicationUser>()
                 .HasOne(e => e.department)
                 .WithMany(d => d.applicationUsers)
                 .HasForeignKey(e => e.DepartmentID)
-                .OnDelete(DeleteBehavior.SetNull);  
+                .OnDelete(DeleteBehavior.Cascade);  
 
             base.OnModelCreating(modelBuilder);
         }
